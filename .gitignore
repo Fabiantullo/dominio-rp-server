@@ -8,9 +8,13 @@
 # Configuraciones con información sensible (claves API, credenciales DB)
 txData/default/config.json
 txData/admins.json
-txData/**/server.cfg
-txData/**/*.cfg
-!txData/**/*.cfg.example
+# IMPORTANTE: NO ignorar server.cfg para tener plantilla en producción
+# Se sube una versión de plantilla para setup rápido
+!txData/**/server.cfg
+!txData/**/server.cfg.example
+# Ignorar respaldos
+txData/**/*.cfg.bkp
+txData/**/*.cfg.backup
 
 # Archivos con tokens y claves
 **/license.txt
@@ -86,6 +90,8 @@ npm-debug.log*
 # NO deben subirse a GitHub
 server/
 !server/.gitignore
+!server/server.cfg
+!server/server.cfg.example
 
 # Si necesitas versionar algún archivo específico del server, úsalo así:
 # !server/mi-archivo-custom.txt
@@ -153,10 +159,12 @@ txData/**/resources/[cfx-default]/
 # ==================
 # ARCHIVOS DE CONFIGURACIÓN LOCAL
 # ==================
-# Entornos locales
+# Entornos locales (.env contiene credenciales sensibles)
 .env
 .env.local
 .env.*.local
+# PERMITIR el archivo de ejemplo
+!.env.example
 
 # Archivos de configuración específicos de desarrollo
 **/config.local.*
