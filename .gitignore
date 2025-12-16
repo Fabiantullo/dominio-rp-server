@@ -1,0 +1,188 @@
+# ============================================
+# .gitignore para Servidor FiveM (Producción)
+# ============================================
+
+# ==================
+# DATOS SENSIBLES
+# ==================
+# Configuraciones con información sensible (claves API, credenciales DB)
+txData/default/config.json
+txData/admins.json
+txData/**/server.cfg
+txData/**/*.cfg
+!txData/**/*.cfg.example
+
+# Archivos con tokens y claves
+**/license.txt
+**/sv_licenseKey*
+**/*apikey*
+**/*api_key*
+
+# ==================
+# BASES DE DATOS Y DATOS DE JUGADORES
+# ==================
+# Base de datos de jugadores (contiene datos personales)
+txData/**/data/playersDB.json
+txData/**/data/playersDB.backup.json
+txData/**/data/cachedData.json
+txData/**/data/configChangelog.json
+txData/**/data/stats_*.json
+
+# ==================
+# LOGS Y ARCHIVOS TEMPORALES
+# ==================
+# Logs del servidor
+txData/**/logs/
+txData/default/logs/
+*.log
+*.log.*
+
+# Archivos de crash
+server/crashes/
+crashes/
+*.dmp
+
+# Archivos temporales
+*.tmp
+*.temp
+.replxx_history
+
+# ==================
+# CACHÉ Y ARCHIVOS GENERADOS
+# ==================
+# Cache de recursos compilados (MUY PESADO - se regenera automáticamente)
+txData/**/cache/
+
+# Archivos compilados y construidos
+**/dist/
+**/build/
+**/.build/
+**/html/dist/
+
+# ==================
+# NODE.JS Y DEPENDENCIAS
+# ==================
+# Node modules (se instalan con npm/yarn)
+**/node_modules/
+node_modules/
+
+# Yarn
+.yarn/
+.yarn.installed
+.pnp.*
+yarn-error.log
+yarn.lock
+.yarnrc
+
+# NPM
+package-lock.json
+npm-debug.log*
+
+# ==================
+# BINARIOS Y ARCHIVOS DEL SISTEMA FIVEM
+# ==================
+# IMPORTANTE: Toda la carpeta server/ contiene archivos base de FiveM
+# Estos son muy pesados y se descargan automáticamente
+# NO deben subirse a GitHub
+server/
+!server/.gitignore
+
+# Si necesitas versionar algún archivo específico del server, úsalo así:
+# !server/mi-archivo-custom.txt
+
+# ==================
+# ARCHIVOS DE BACKUP
+# ==================
+*.bkp
+*.backup
+*.old
+*~
+
+# ==================
+# ARCHIVOS DEL SISTEMA OPERATIVO
+# ==================
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+
+# ==================
+# IDEs Y EDITORES
+# ==================
+# VS Code
+.vscode/
+!.vscode/settings.json.example
+!.vscode/extensions.json.example
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ==================
+# RECURSOS ESPECÍFICOS
+# ==================
+# Recursos por defecto de FiveM (vienen con la instalación base)
+txData/**/resources/[cfx-default]/
+
+# Recursos standalone comunes (se descargan de GitHub/externo)
+# Descomenta los que uses y quieras excluir:
+# txData/**/resources/[standalone]/PolyZone/
+# txData/**/resources/[standalone]/screenshot-basic/
+# txData/**/resources/[voice]/pma-voice/
+
+# Recursos personalizados que no deben subirse
+# Agregar aquí recursos con datos sensibles o privados
+# Ejemplo:
+# txData/QBCore_**/resources/[qb]/mi-recurso-privado/
+
+# ==================
+# ARCHIVOS DE CONFIGURACIÓN LOCAL
+# ==================
+# Entornos locales
+.env
+.env.local
+.env.*.local
+
+# Archivos de configuración específicos de desarrollo
+**/config.local.*
+**/settings.local.*
+
+# ==================
+# ARCHIVOS QUE SÍ DEBEN INCLUIRSE (EJEMPLOS)
+# ==================
+# Archivos de ejemplo para configuración
+!**/*.example
+!**/*.sample
+!**/README.md
+!**/LICENSE
+
+# ==================
+# VITE/WEBPACK/BUILD TOOLS
+# ==================
+**/.vite/
+**/webpack/
+*.chunk.js
+*.bundle.js
+*.map
+
+# ==================
+# OTROS
+# ==================
+# Archivos de depuración
+debug.log
+*.debug
