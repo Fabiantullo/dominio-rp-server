@@ -8,9 +8,9 @@
 # Configuraciones con información sensible (claves API, credenciales DB)
 txData/default/config.json
 txData/admins.json
-# IMPORTANTE: NO ignorar server.cfg para tener plantilla en producción
-# Se sube una versión de plantilla para setup rápido
-!txData/**/server.cfg
+# Ignorar server.cfg reales (contienen claves/licencias)
+txData/**/server.cfg
+# Permitir solo plantillas de ejemplo
 !txData/**/server.cfg.example
 # Ignorar respaldos
 txData/**/*.cfg.bkp
